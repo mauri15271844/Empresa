@@ -16,21 +16,28 @@ public class EmpresaController {
     //-------------------post---------------------------------
 
     @PostMapping("/web")
-    private void crearEmpresa(@RequestBody Empresa empresa){
-        empresaService.crearEmpresa(empresa);
+    private void crearYActualizarEmpresa(@RequestBody Empresa empresa) {
+        empresaService.crearYActualizarEmpresa(empresa);
     }
 
     //-----------------------get---------------------------------
 
     @GetMapping("/web")
-    private List<Empresa> mostrarEmpresa(){
+    private List<Empresa> mostrarEmpresa() {
         return empresaService.verEmpresas();
     }
 
     //--------------------------delete--------------------------
 
     @DeleteMapping("web/{id}")
-    private void borrarEmpresa(@PathVariable("id") Long id){
+    private void borrarEmpresa(@PathVariable("id") Long id) {
         empresaService.borrarEmpresa(id);
+    }
+
+    //--------------------------put----------------------------------
+
+    @PutMapping("/web")
+    private void atualizarEmpresa(@RequestBody Empresa empresa) {
+        empresaService.crearYActualizarEmpresa(empresa);
     }
 }

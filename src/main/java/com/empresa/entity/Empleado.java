@@ -27,6 +27,8 @@ public class Empleado {
     private String rol;
 
 
+
+
     @ManyToOne
     @JoinColumn(name = "empresa_id")
     private Empresa empresa;

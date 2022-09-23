@@ -18,7 +18,7 @@ public class EmpresaService {
 
     //------------------crear y actualizar-------------------
 
-    public void crearEmpresa(Empresa empresa){
+    public void crearYActualizarEmpresa(Empresa empresa){
         empresaRepository.save(empresa);
     }
 
@@ -36,6 +36,5 @@ public class EmpresaService {
     }
 
     //-------------------actuaizar-----------------
-
 
 }
