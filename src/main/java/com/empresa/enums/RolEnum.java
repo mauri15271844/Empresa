@@ -7,6 +7,6 @@ import javax.persistence.Table;
 @Table(name = "rol")
 public enum RolEnum {
 
-    Aministrador,
+    Administrador,
     Operario
 }

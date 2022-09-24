@@ -30,17 +30,21 @@ public class Empleado {
 
     private String rol;
 
-    @OneToMany
-    @JoinColumn(name= "transacciones_id")
-
-    Transacciones transaccinesEmpleado;
-
     private Date fechaCreacionEmpleado;
 
     private Date fechaActualizacionEmpleado;
 
+   //-------------------relaciones uml-----------------
+
+    @OneToMany(mappedBy = "empleado", fetch = FetchType.LAZY)
+    private List<Transacciones> transacciones;
+
+    @ManyToOne
+    @JoinColumn(name= "empresa_id")
+    private Empresa empresa;
+
     //-----------------------enums-------------------------
 
-    @Enumerated(EnumType.STRING)
-    private RolEnum fucion;
+    @Enumerated(value=EnumType.STRING)
+    private RolEnum funcion;
 }

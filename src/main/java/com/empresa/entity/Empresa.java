@@ -29,15 +29,15 @@ public class Empresa {
 
     private String direccion;
 
-    @OneToMany
-    @JoinColumn(name= "empleado_id")
-    Empleado empleados;
-
-    @OneToMany
-    @JoinColumn(name= "transacciones_id")
-    Transacciones transacciones;
-
     private Date fechaCreacion;
 
     private Date fechaActualizacion;
+
+    //---------------------relaciones uml----------
+
+    @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+    private List<Transacciones> transacciones;
+
+    @OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
+    private List<Empleado> empleados;
 }

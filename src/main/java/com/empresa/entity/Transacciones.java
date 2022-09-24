@@ -28,5 +28,15 @@ public class Transacciones {
 
     private Date fechaActualizacion;
 
+    //----------------relaciones uml------------------
+
+    @ManyToOne
+    @JoinColumn(name= "empresa_id")
+    private Empresa empresa;
+
+    @ManyToOne
+    @JoinColumn(name= "empleado_id")
+    private Empleado empleado;
+
 
 }
