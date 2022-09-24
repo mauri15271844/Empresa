@@ -1,11 +1,15 @@
 package com.empresa.entity;
 
+
+import com.empresa.enums.RolEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -26,10 +30,17 @@ public class Empleado {
 
     private String rol;
 
+    @OneToMany
+    @JoinColumn(name= "transacciones_id")
 
+    Transacciones transaccinesEmpleado;
 
+    private Date fechaCreacionEmpleado;
 
-    @ManyToOne
-    @JoinColumn(name = "empresa_id")
-    private Empresa empresa;
+    private Date fechaActualizacionEmpleado;
+
+    //-----------------------enums-------------------------
+
+    @Enumerated(EnumType.STRING)
+    private RolEnum fucion;
 }

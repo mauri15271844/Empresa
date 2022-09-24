@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
@@ -15,29 +14,19 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Empresa {
+public class Transacciones {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nombre;
+    private String concepto;
 
-    private String nit;
-
-    private String telefono;
-
-    private String direccion;
-
-    @OneToMany
-    @JoinColumn(name= "empleado_id")
-    Empleado empleados;
-
-    @OneToMany
-    @JoinColumn(name= "transacciones_id")
-    Transacciones transacciones;
+    private float cantidad;
 
     private Date fechaCreacion;
 
     private Date fechaActualizacion;
+
+
 }
