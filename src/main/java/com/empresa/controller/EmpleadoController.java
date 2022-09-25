@@ -18,28 +18,28 @@ public class EmpleadoController {
 
     //-------------------post---------------------------------
 
-    @PostMapping("/empleado")
+    @PostMapping("/o")
     private void crearYActualizarEmpleado(@RequestBody Empleado empleado) {
         empleadoService.crearYActualizarEmpleado(empleado);
     }
 
     //-----------------------get---------------------------------
 
-    @GetMapping("/empleado")
+    @GetMapping("/o")
     private List<Empleado> mostrarEmpleado() {
         return empleadoService.verEmpleados();
     }
 
     //--------------------------delete--------------------------
 
-    @DeleteMapping("empleado/{id}")
+    @DeleteMapping("o/{id}")
     private void borrarEmpleado(@PathVariable("id") Long id) {
         empleadoService.borrarEmpleado(id);
     }
 
     //--------------------------put----------------------------------
 
-    @PutMapping("/empleado")
+    @PutMapping("/o")
     private void atualizarEmpleado(@RequestBody Empleado empleado) {
         empleadoService.crearYActualizarEmpleado(empleado);
     }

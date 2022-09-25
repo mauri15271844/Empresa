@@ -31,12 +31,12 @@ public class Transacciones {
     //----------------relaciones uml------------------
 
     @ManyToOne
-    @JoinColumn(name= "empresa_id")
-    private Empresa empresa;
+    private Empleado empleado;
 
     @ManyToOne
-    @JoinColumn(name= "empleado_id")
-    private Empleado empleado;
+    private Empresa empresa;
+
+
 
 
 }

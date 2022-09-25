@@ -17,28 +17,28 @@ public class TransaccionController {
 
     //-------------------post---------------------------------
 
-    @PostMapping("/millon")
+    @PostMapping("/n")
     private void crearYActualizarTransaccion(@RequestBody Transacciones transaccion) {
         transaccionService.crearYActualizarTransaccion(transaccion);
     }
 
     //-----------------------get---------------------------------
 
-    @GetMapping("/millon")
+    @GetMapping("/n")
     private List<Transacciones> mostrarTransaccion() {
         return transaccionService.verTransacciones();
     }
 
     //--------------------------delete--------------------------
 
-    @DeleteMapping("millon/{id}")
+    @DeleteMapping("n/{id}")
     private void borrarTransaccion(@PathVariable("id") Long id) {
         transaccionService.borrarTransaccion(id);
     }
 
     //--------------------------put----------------------------------
 
-    @PutMapping("/millon")
+    @PutMapping("/n")
     private void atualizarTransaccion(@RequestBody Transacciones transaccion) {
         transaccionService.crearYActualizarTransaccion(transaccion);
     }

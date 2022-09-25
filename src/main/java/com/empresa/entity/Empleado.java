@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name ="empleado")
 public class Empleado {
 
     @Id
@@ -24,27 +25,31 @@ public class Empleado {
     @Column(name="id")
     private Long id;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "correo")
     private String correo;
 
+    @Column(name = "rol")
     private String rol;
 
+    @Column(name = "fecha_de_ingreso_de_empleado")
     private Date fechaCreacionEmpleado;
 
+    @Column(name = "fecha_de_actualizaciones")
     private Date fechaActualizacionEmpleado;
-
-   //-------------------relaciones uml-----------------
-
-    @OneToMany(mappedBy = "empleado", fetch = FetchType.LAZY)
-    private List<Transacciones> transacciones;
-
-    @ManyToOne
-    @JoinColumn(name= "empresa_id")
-    private Empresa empresa;
 
     //-----------------------enums-------------------------
 
     @Enumerated(value=EnumType.STRING)
     private RolEnum funcion;
+
+    //-------------------relaciones uml-----------------
+
+    @ManyToOne
+    private Empresa empresa;
+
+    @OneToMany
+    private List<Transacciones> transacciones;
 }
