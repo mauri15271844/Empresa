@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+<h1 class="titulo">
+    yo soy de mente millonaria, por esa razon soy millonario
+</h1>
+<table>
+    <tr>Id</tr>
+    <tr>Nombre</tr>
+    <tr>Correo</tr>
+    <tr>Rol</tr>
+    <tr>Fecha de ing empleado</tr>
+    <tr>Fecha actualizaciones</tr>
+    <tr>Funcion</tr>
+
+    <tr th:each="empleados : ${list_empleados}">
+        <td th:text="${empleados.id}"></td>
+        <td th:text="${empleados.nombre}"></td>
+        <td th:text="${empleados.correo}"></td>
+        <td th:text="${empleados.rol}"></td>
+        <td th:text="${empleados.fechaCreacionEmpleado}"></td>
+        <td th:text="${empleados.fechaActualizacionEmpleado}"></td>
+        <td th:text="${empleados.funcion}"></td>
+    </tr>
+
+</table>
+<a href="/agregar-empleado">Agregar un nuevo empleado</a>
+</body>
+</html>
