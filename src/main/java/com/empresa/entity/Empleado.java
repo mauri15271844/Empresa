@@ -31,7 +31,7 @@ public class Empleado {
     @Column(name = "correo")
     private String correo;
 
-    @Column(name = "rol")
+   /* @Column(name = "rol")
     private String rol;
 
     @Column(name = "fecha_de_ingreso_de_empleado")
@@ -51,5 +51,5 @@ public class Empleado {
     private Empresa empresa;
 
     @OneToMany
-    private List<Transacciones> transacciones;
+    private List<Transacciones> transacciones;*/
 }

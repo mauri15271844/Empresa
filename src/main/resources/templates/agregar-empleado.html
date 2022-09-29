@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 
-<form action="" method="post">
-    <label for="id">Id</label>
-    <input type="text"id="id">
+<form th:action="@{/o}" method="post">
 
     <label for="nombre">Nombre</label>
-    <input type="text"id="nombre">
+    <input type="text" id="nombre" th:${o.nombre}>
 
     <label for="correo">Correo</label>
-    <input type="text"id="correo">
+    <input type="text" id="correo" th:${o.correo}>
 
-    <label for="rol">Rol</label>
-    <input type="text"id="rol">
 
-    <label for="f_ing">Fecha de ing empleado</label>
-    <input type="text"id="f_ing">
+    <input type="submit" value="Crear">
 
-    <label for="f_actu">Fecha actualizaciones</label>
-    <input type="text"id="f_actu">
-
-    <label for="fun">Funcion</label>
-    <input type="text"id="fun">
 </form>
 
+<a href="/">regresar</a>
 </body>
 </html>

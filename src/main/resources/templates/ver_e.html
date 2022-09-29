@@ -16,19 +16,12 @@
     <tr>Id</tr>
     <tr>Nombre</tr>
     <tr>Correo</tr>
-    <tr>Rol</tr>
-    <tr>Fecha de ing empleado</tr>
-    <tr>Fecha actualizaciones</tr>
-    <tr>Funcion</tr>
 
     <tr th:each="empleados : ${list_empleados}">
+
         <td th:text="${empleados.id}"></td>
         <td th:text="${empleados.nombre}"></td>
         <td th:text="${empleados.correo}"></td>
-        <td th:text="${empleados.rol}"></td>
-        <td th:text="${empleados.fechaCreacionEmpleado}"></td>
-        <td th:text="${empleados.fechaActualizacionEmpleado}"></td>
-        <td th:text="${empleados.funcion}"></td>
     </tr>
 
 </table>

@@ -26,10 +26,20 @@ public class HomeController {
         return "ver_e";
     }
 
-    //-------------------------post-------------------------------------
+    //--------------------------post--------------------------------------
 
-    @PostMapping
-    private void crearYActualizarTabla(@RequestBody Empleado empleado) {
+    @PostMapping("/web")
+    private String formEmpleado(Empleado empleado){
         webController.crearYActualizarEmpleado(empleado);
+        return "redirect:/o";
     }
+
+    //-----------------------pagina agregar empleado--------------------
+
+    @GetMapping("/agregar-empleado")
+    private String pagAgregarEmpleado(){
+        return "agregar-empleado";
+    }
+
+    //------------------------------------------------------------------
 }
